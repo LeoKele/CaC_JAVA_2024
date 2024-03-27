@@ -1,0 +1,29 @@
+.filamento-img{
+    filter: blur(1px) grayscale(100%);
+    
+}
+
+.card{
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.card h5 {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.logo {
+    width: 45px;
+}
+
+#register{
+    margin: auto;
+    max-width: 30%;
+}
