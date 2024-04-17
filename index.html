@@ -18,8 +18,8 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                  <div class="navbar-nav ul_nav">
                     <a class="nav-link me-2" href="pages/iniciosesion.html">Iniciar Sesión</a>
                     <a class="nav-link" href="pages/registrarse.html">Registrarse</a>
                   </div>
@@ -30,48 +30,84 @@
       <main class="container-fluid">
         <section>
           <h1 class="title">Las mejores películas y seríes en un solo lugar</h1>
-          <h4 class=""ñ>Está al tanto de las tendencias del mundo cinematográfico</h4>   
+          <h4 class="subtitle">Está al tanto de las tendencias del mundo cinematográfico</h4>   
         </section>
-       <section>
-          <form action="">
-              <input type="text">
-              <input type="submit" value="Buscar">
-          </form>
-       </section>
-      <section>
-        <div class="row m-1 filamentos">
-          <div class="col-sm-3 mb-2 mb-sm-0">
-            <a href="/pages/detalle.html" class="card" style="width: 17rem">
+
+      <section class="m-5">
+        <form class="buscador">
+            <div class="form-floating">
+              <input class="input_buscador" type="text" placeholder="¿Qué quieres buscar?" id="buscar" name="buscar">
+              <input class="btn_buscador btn_submit" type="submit" value="Buscar" >
+              </div>
+        </form>
+      </section>
+
+      <section class="m-5">
+        <div class="row m-1">
+          <div class="col-sm-6 col-md-3 col-lg-2 mb-sm-0 my-2">
+            <a href="/pages/detalle.html" class="card">
               <img src="/assets/img/posters/shogun-2024.png" alt="" class="card-img filamento-img">
               <div class="card-img-overlay">
                 <h5 class="position-absolute top-50 start-50 translate-middle">Shogun</h5>
               </div>
             </a>
           </div>
-          <div class="col-sm-3">
-            <div class="card" style="width: 17rem">
+          <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+            <a class="card">
               <img src="/assets/img/posters/the-walking-dead-the-ones-who-li.png" alt="" class="card-img filamento-img">
               <div class="card-img-overlay">
                 <h5 class="position-absolute top-50 start-50 translate-middle">The Walking Dead: The Ones Who Live</h5>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="col-sm-3">
-              <div class="card" style="width: 17rem">
+          <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+              <a class="card">
                 <img src="/assets/img/posters/3-body-problem.png" alt="" class="card-img filamento-img">
                 <div class="card-img-overlay">
                   <h5 class="position-absolute top-50 start-50 translate-middle">3 Body problem</h5>
                 </div>
-              </div>
+              </a>
           </div>
-          <div class="col-sm-3">
-              <div class="card" style="width: 17rem">
+          <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+              <a class="card">
                 <img src="/assets/img/posters/poor-things.png" alt="" class="card-img filamento-img">
                 <div class="card-img-overlay">
                   <h5 class="position-absolute top-50 start-50 translate-middle">Poor Things</h5>
                 </div>
-              </div>
+              </a>
           </div>
+          <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+            <a class="card">
+              <img src="/assets/img/posters/the_gentlemen.png" alt="" class="card-img filamento-img">
+              <div class="card-img-overlay">
+                <h5 class="position-absolute top-50 start-50 translate-middle">The Gentlemen</h5>
+              </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+          <a class="card">
+            <img src="/assets/img/posters/zona_de_interes.png" alt="" class="card-img filamento-img">
+            <div class="card-img-overlay">
+              <h5 class="position-absolute top-50 start-50 translate-middle">Zona de Interés</h5>
+            </div>
+          </a>
+      </div>
+      <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+        <a class="card">
+          <img src="/assets/img/posters/anatomia_de_una_caida.png" alt="" class="card-img filamento-img">
+          <div class="card-img-overlay">
+            <h5 class="position-absolute top-50 start-50 translate-middle">Anatomía de una caída</h5>
+          </div>
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-3 col-lg-2 my-2">
+      <a class="card">
+        <img src="/assets/img/posters/rick-y-morty.png" alt="" class="card-img filamento-img">
+        <div class="card-img-overlay">
+          <h5 class="position-absolute top-50 start-50 translate-middle">Rick y Morty</h5>
+        </div>
+      </a>
+  </div>
       </div>
       </section>
 

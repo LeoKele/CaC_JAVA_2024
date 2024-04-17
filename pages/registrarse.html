@@ -8,20 +8,20 @@
         <script src="https://kit.fontawesome.com/7a7df7520d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
-        <title>Tipos de Filamento</title>
+        <title>Registro | BlockMovies</title>
     </head>
     <body>
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="" class="logo"></a>
+                  <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="logo de la página" class="logo me-2">BlockMovies</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav ul_nav">
                       <a class="nav-link me-2" href="/pages/iniciosesion.html">Iniciar Sesión</a>
-                      <a class="nav-link" href="pages/registrarse.html">Registrarse</a>
+                      <a class="nav-link" href="/pages/registrarse.html">Registrarse</a>
                     </div>
                   </div>
                 </div>
@@ -29,7 +29,7 @@
         </header>
         <main>
             <section class="mt-5">
-                <h1 class="text-center mb-4">Registro</h1>
+                <h1 class="text-center mb-4 titulo_form">Registro</h1>
                 <form id="register" >
                     <div class="form-floating mb-3">
                         <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="form-control" required>
@@ -55,7 +55,7 @@
                         <label for="birth">Ingrese su fecha de nacimiento</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <select name="country" id="country" class="form-select">
+                        <select name="country" id="country" class="form-select" required>
                             <option selected>-</option>
                             <option value="AR">Argentina</option>
                             <option value="PE">Perú</option>
@@ -69,8 +69,11 @@
                         <label for="termino" class="form-check-label">Acepta Terminos y Condiciones</label>
                     </div>
                     <div class="mb-3">
-                        <input type="reset" value="Limpiar campos"  class="btn btn-primary">
-                        <input type="submit" value="Registrarse"  class="btn btn-primary">
+                        <input type="reset" value="Limpiar campos"  class="btn_submit">
+                        <input type="submit" value="Registrarse"  class="btn_submit">
+                    </div>
+                    <div class="btn_secundario">
+                        <a href="/pages/iniciosesion.html" class="text-decoration-none">Iniciar Sesión</a>
                     </div>
                 </form>
             </section>

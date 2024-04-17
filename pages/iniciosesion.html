@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="es" data-bs-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,45 @@
         <script src="https://kit.fontawesome.com/7a7df7520d.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
-        <title>Tipos de Filamento</title>
+        <title>Iniciar Sesión | BlockMovies</title>
     </head>
     <body>
-        
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="logo de la página" class="logo me-2">BlockMovies</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ul_nav">
+                      <a class="nav-link me-2" href="/pages/iniciosesion.html">Iniciar Sesión</a>
+                      <a class="nav-link" href="/pages/registrarse.html">Registrarse</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <main>
+            <section class="mt-5">
+                <h1 class="text-center mb-4 titulo_form">Iniciar Sesión</h1>
+                <form id="login" >
+                    <div class="form-floating mb-3">
+                        <input type="email" name="email" id="email" placeholder="Ingrese su email" class="form-control" aria-describedby="inputGroupPrepend" required>
+                        <label for="email">Ingrese su email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" class="form-control" required>
+                        <label for="password">Ingrese su contraseña</label>
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" value="Iniciar Sesión"  class="btn_submit">
+                    </div>
+                    <div class="btn_secundario">
+                        <a href="/pages/registrarse.html" class="text-decoration-none">Registrarse</a>
+                    </div>
+                </form>
+            </section>
+        </main>
     </body>
 </html>
