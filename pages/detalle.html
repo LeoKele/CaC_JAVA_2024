@@ -1,13 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es" data-bs-theme="dark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalle</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/7a7df7520d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        
+        <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Iniciar Sesión | BlockMovies</title>
     </head>
     <body>
-        
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="logo de la página" class="logo me-2">BlockMovies</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDetalle" aria-controls="navbarDetalle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse w-100 justify-content-end" id="navbarDetalle">
+                    <div class="navbar-nav ul_nav">
+                      <a class="nav-link me-2" href="iniciosesion.html">Iniciar Sesión</a>
+                      <a class="nav-link" href="registrarse.html">Registrarse</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <main class="container-fluid text-center my-5">
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-4 col-sm-12">
+                    <img src="/assets/img/posters/anatomia_de_una_caida.png" alt="poster anatomia de una caida" class="detalle-img filamento-img">
+                </div>
+                <div class="col-lg-8 col-sm-12">
+                    <div class="mt-3">
+                        <h1>Anatomía de una caída</h1>
+                        <p>Título original: Anatomie d'une chute</p>
+                        <p>2023 • Crimen - Drama - Suspenso • 2h 31min</p>
+                    </div>
+                    <div>
+                        <h4>Sinopsis</h4>
+                        <p>Sandra, una escritora alemana, vive con su marido Samuel y su hijo ciego, Daniel, en un chalé en medio de los Alpes franceses. Cuando Samuel fallece en misteriosas circunstancias, la investigación no puede determinar si se trata de un suicidio o de un homicidio. Sandra es arrestada y juzgada por asesinato, y el proceso pone su tumultuosa relación y su ambigua personalidad en el punto de mira</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 col-sm-12 ">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="" width="540" height="360" src="https://www.youtube.com/embed/Qg_2qB_Q7Pc" title="ANATOMÍA DE UNA CAÍDA | TRAILER OFICIAL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 mt-3 d-flex justify-content-center">
+                    <table class="" id="tabla_detalle">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="p-2">Info</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="p-2">Dirección</th>
+                                <td>Justine Triet</td>
+                            </tr>
+                            <tr>
+                                <th class="p-2">Guión</th>
+                                <td>Justine Triet • Arthur Harari</td>
+                            </tr>
+                            <tr>
+                                <th class="p-2">Reparto Principal </th>
+                                <td>Sandra Hüller • Swann Arlaud • Milo Machado-Graner</td>
+                            </tr>
+                            <tr>
+                                <th class="p-2">Puntuación en IMDb</th>
+                                <td><i class="fa-solid fa-star"></i><strong>7,7</strong> / 10 (116mil)</td>
+                            </tr>
+                            <tr>
+                                <th class="p-2">Donde Ver</th>
+                                <!-- <td><img src="../assets/img/streaming_logo/amazonprimevideo.jpg" width="40"></img></td> -->
+                                <td>Prime Video</td>
+                            </tr>
+                            <tr>
+                                <th class="p-2">Premios</th>
+                                <td><a href="https://www.imdb.com/title/tt17009710/awards/?ref_=tt_awd" class="text-decoration-none detalle-premio">Ganó 1 premio Óscar • 106 premios y 179 nominaciones</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+
+
+        <script src="/js/bootstrap.bundle.min.js"></script>
     </body>
 
 </html>

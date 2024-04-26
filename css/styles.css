@@ -2,6 +2,9 @@
 
 *{
     font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 :root{
     --dorado: #FFC300;
@@ -29,10 +32,6 @@ html {
     list-style: none;
   }
   
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 
   /*  */
 .navbar-brand{
@@ -84,10 +83,7 @@ html {
     padding: 6px;
    &::placeholder {
     color: #fff;
-    border: blue;
    }
-   /* transition: border 0.3s ease; */
-
    &:focus{
     outline: none;
     border: 1px solid var(--dorado);
@@ -109,6 +105,10 @@ html {
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
     }
+    & img {
+        max-width: 100%;
+        height: auto;
+    }
 
 }
 
@@ -122,7 +122,7 @@ html {
         /* backdrop-filter: blur(20px); */
         color: var(--dorado);
     }
-     & .filamento-img{
+     & .card-img{
         filter: blur(10px) grayscale(100%);
      }
 }
@@ -138,22 +138,10 @@ p {
     font-size: 1rem;
 }
 
-/* section{
-    background-image: url();
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    height: 50vh;
-
-    overflow: hidden;
-    overflow: auto;
-} */
-
 
 #register, #login{
     margin: auto;
-    max-width: 30%;
+    max-width: 50vh;
 }
 
 .buscador {
@@ -166,10 +154,64 @@ p {
     }
 }
 
-/*Media querie para celular version anterior*/
-
-/* y ser una pantalla desde 0 a 768 */
-@media screen and (width <= 800px){
-
+.detalle-img {
+    width: 50%;
 }
 
+.detalle-premio {
+    color: var(--dorado);
+}
+
+#tabla_detalle{
+    background-color: transparent;
+    & th, td {
+        border: .5px solid var(--dorado-sec);
+    }
+}
+
+footer{
+    background-color: var(--dorado-sec);
+    & a {
+        color: var(--dorado);
+
+    }
+}
+
+footer a:hover {
+    font-weight: bolder;
+}
+
+body {
+    background-color: #282A3A;
+}
+
+header{
+    background-color: #1d1e29;
+}
+
+
+.embla {
+    overflow: hidden;
+  }
+  .embla__container {
+    display: flex;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+  
+.aclamadas {
+    & h2 {
+        color: var(--dorado);
+    }
+    & img {
+        max-width: 95%;
+        max-height: 50%;
+        height: auto;
+    }
+}
+
+section h2 {
+    color: var(--dorado);
+}
