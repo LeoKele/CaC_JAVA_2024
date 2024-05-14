@@ -9,10 +9,12 @@
 :root{
     --dorado: #FFC300;
     --dorado-sec: #ffc40071;
+    --gris: #282A3A;
+    --gris-oscuro: #1d1e29;
 }
 
 
-
+/*reset html*/
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -32,8 +34,15 @@ html {
     list-style: none;
   }
   
+  p {
+    font-size: 1rem;
+}
 
-  /*  */
+html, body {
+    height: 100%;
+}
+
+  /**  navbar*/
 .navbar-brand{
     color: var(--dorado);
 }
@@ -66,9 +75,13 @@ html {
     color: #212529;
 }
 
+.logo {
+    width: 40px;
+    
 
+}
 
-
+/** estilos titulos y buscador index*/
 .title {
     color: var(--dorado);
 }
@@ -94,7 +107,7 @@ html {
     padding: 6px;
 }
 
-/*  */
+/** cards estilos y animaciones */
 
 .card{
     transition: transform 0.3s, box-shadow 0.3s;
@@ -128,32 +141,26 @@ html {
 }
 
 
-.logo {
-    width: 40px;
-    
-
-}
-
-p {
-    font-size: 1rem;
-}
 
 
+
+
+
+/**forms login y register */
 #register, #login{
     margin: auto;
     max-width: 50vh;
 }
 
+/** buscador index*/
 .buscador {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    & .inputBuscador {
-        margin: 0 0 0 1rem;
-    }
 }
 
+/** Estilo detalles*/
 .detalle-img {
     width: 50%;
 }
@@ -169,6 +176,7 @@ p {
     }
 }
 
+/** Colores body, footer y header*/
 footer{
     background-color: var(--dorado-sec);
     & a {
@@ -182,14 +190,19 @@ footer a:hover {
 }
 
 body {
-    background-color: #282A3A;
+    background: var(--gris-oscuro);
+    background: linear-gradient(180deg, var(--gris-oscuro) 0%, var(--gris) 35%);
 }
 
 header{
-    background-color: #1d1e29;
+    background: var(--gris-oscuro);
+    background: linear-gradient(180deg, var(--gris-oscuro) 0%, rgba(31,32,44,1) 35%);
 }
 
 
+
+
+/** Carousel de aclamadas*/
 .embla {
     overflow: hidden;
   }
@@ -214,4 +227,49 @@ header{
 
 section h2 {
     color: var(--dorado);
+}
+
+/** Barra de scroll*/
+body::-webkit-scrollbar {
+    width: 7px; /* Ancho de toda la barra de desplazamiento */
+}
+body::-webkit-scrollbar-track {
+    background: var(--gris); /* Color del área de seguimiento */
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--dorado); /* Color de la barra */
+    border-radius: 3px; /* borde barra */
+}
+
+
+
+/** Boton de scroll to top*/
+.scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--dorado-sec);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* Mostrar el botón cuando se hace scroll */
+.show-scroll-button {
+    display: block;
+}
+
+.scroll-top-button:hover{
+    background-color: var(--dorado);
+    color: #212529;
+}
+
+/** Mensaje error validaciones*/
+.mensaje-error{
+    color: red;
+    font-size: 12px;
 }

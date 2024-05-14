@@ -11,15 +11,15 @@
         <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
         <title>Iniciar Sesión | BlockMovies</title>
     </head>
-    <body>
+    <body class="forms">
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="logo de la página" class="logo me-2">BlockMovies</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarLogin" aria-controls="navBarLogin" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  <div class="collapse navbar-collapse" id="navBarLogin">
+                  <div class="collapse navbar-collapse w-100 justify-content-end" id="navBarLogin">
                     <div class="navbar-nav ul_nav">
                       <a class="nav-link me-2" href="/pages/iniciosesion.html">Iniciar Sesión</a>
                       <a class="nav-link" href="/pages/registrarse.html">Registrarse</a>
@@ -31,14 +31,16 @@
         <main>
             <section class="mt-5">
                 <h1 class="text-center mb-4 titulo_form">Iniciar Sesión</h1>
-                <form id="login" >
+                <form id="login" novalidate>
                     <div>
                         <div class="form-floating mb-3">
-                            <input type="email" name="email" id="email" placeholder="Ingrese su email" class="form-control" required>
+                            <input type="email" name="email" id="email" placeholder="Ingrese su email" class="form-control"  required>
+                            <span id="mensajeEmail" class="mensaje-error"></span>
                             <label for="email">Ingrese su email</label>
                         </div>
                         <div class="form-floating mb-3" >
                             <input type="password" name="password" id="password" placeholder="Ingrese su contraseña" class="form-control" required>
+                            <span id="mensajeContrasena" class="mensaje-error"></span>
                             <label for="password">Ingrese su contraseña</label>
                         </div>
                         <div class="mb-3 text-center" >
@@ -52,6 +54,6 @@
             </section>
         </main>
         <script src="../js/bootstrap.bundle.min.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+        <script src="../js/validar_login.js"></script>
     </body>
 </html>
