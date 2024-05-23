@@ -190,13 +190,13 @@ footer a:hover {
 }
 
 body {
-    background: var(--gris-oscuro);
-    background: linear-gradient(180deg, var(--gris-oscuro) 0%, var(--gris) 35%);
+    background: var(--gris);
+    /* background: linear-gradient(180deg, var(--gris-oscuro) 0%, var(--gris) 35%); */
 }
 
 header{
     background: var(--gris-oscuro);
-    background: linear-gradient(180deg, var(--gris-oscuro) 0%, rgba(31,32,44,1) 35%);
+    /* background: linear-gradient(180deg, var(--gris-oscuro) 0%, rgba(31,32,44,1) 35%); */
 }
 
 
@@ -272,4 +272,8 @@ body::-webkit-scrollbar-thumb {
 .mensaje-error{
     color: red;
     font-size: 12px;
+}
+
+#spinner {
+    display: none;
 }

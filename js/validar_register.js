@@ -7,7 +7,7 @@ document.getElementById("register").addEventListener("submit", function(event) {
     const contrasena = document.getElementById("password").value;
 
     const fechaInput = document.getElementById("birth");
-    const fechaNac = new Date(fechaInput.value); //creamos objeto del tipo Date para compara la fecha ingresada con la fecha actual
+    const fechaNac = new Date(fechaInput.value); //creamos objeto del tipo Date para comparar la fecha ingresada con la fecha actual
     const fechaActual = new Date();
 
     const pais = document.getElementById("country").value;
