@@ -112,8 +112,8 @@ html, body {
 .card{
     transition: transform 0.3s, box-shadow 0.3s;
     & h5 {
-        color: var(--dorado);
-        font-weight: 900;
+        color: #fff;
+        font-weight: bold;
         font-size: 30px;
         opacity: 0;
         transition: opacity 0.5s ease-in-out;
@@ -129,14 +129,13 @@ html, body {
 
 .card:hover {
     transform: scale(.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--dorado);
     & h5 {
         opacity: 1;
-        /* backdrop-filter: blur(20px); */
-        color: var(--dorado);
+        color: #fff;
     }
      & .card-img{
-        filter: blur(10px) grayscale(100%);
+        filter: blur(20px);
      }
 }
 
@@ -150,6 +149,12 @@ html, body {
 #register, #login{
     margin: auto;
     max-width: 50vh;
+}
+
+/** Form para agregar peliculas*/
+#agregarPelicula{ 
+    margin: auto;
+    max-width: 80vw;
 }
 
 /** buscador index*/
@@ -169,11 +174,20 @@ html, body {
     color: var(--dorado);
 }
 
-#tabla_detalle{
+.tablas{
+    border-collapse: collapse;
     background-color: transparent;
     & th, td {
         border: .5px solid var(--dorado-sec);
     }
+
+
+
+}
+.img_tabla{
+    width: 100px;
+    height: auto;
+    display: block;
 }
 
 /** Colores body, footer y header*/
@@ -203,7 +217,7 @@ header{
 
 
 /** Carousel de aclamadas*/
-.embla {
+/* .embla {
     overflow: hidden;
   }
   .embla__container {
@@ -223,7 +237,7 @@ header{
         max-height: 50%;
         height: auto;
     }
-}
+} */
 
 section h2 {
     color: var(--dorado);
@@ -274,6 +288,23 @@ body::-webkit-scrollbar-thumb {
     font-size: 12px;
 }
 
-#spinner {
-    display: none;
+/* */
+#carousel {
+    position: relative;
+}
+
+
+#tablaDetalle {
+    & th, td {
+        border: none;
+    }
+    & th {
+        color: var(--dorado);
+    }
+}
+#detalleMovie h1{
+    color: var(--dorado);
+}
+#sinopsis h4 {
+    color: var(--dorado);
 }

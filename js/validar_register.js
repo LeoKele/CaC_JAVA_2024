@@ -72,7 +72,7 @@ document.getElementById("register").addEventListener("submit", function(event) {
     // Verifica si ambos campos son válidos
     if (emailValido && contrasenaValida && nombreValido && apellidoValido && paisValido && fechaValido && checkboxValido) {
         console.log("Formulario válido");
-        // alert("Bienvenido:");
+        this.submit()
     } else {
         console.log("Formulario inválido");
 

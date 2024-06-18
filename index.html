@@ -9,7 +9,9 @@
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="/css/glide.core.min.css">
+  <script src="js/glide.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/glide.core.min.css">
   <link rel="stylesheet" href="css/glide.theme.min.css">
   <link rel="stylesheet" href="/css/styles.css">
   <title>BlockMovies</title>
@@ -42,185 +44,48 @@
     </section>
 
     <section class="m-5">
-      <form class="buscador text-center">
+      <form class="buscador text-center" id="form_buscar">
         <div class="form-floating">
           <input class="input_buscador my-2" type="text" placeholder="¿Qué quieres buscar?" id="buscar" name="buscar">
           <input class="btn_buscador btn_submit" type="submit" value="Buscar" id="input_buscar">
         </div>
       </form>
+      <div class="row m-1 justify-content-center" id="busquedaSection">
+      </div>
     </section>
     <hr style="color: var(--dorado);">
 
     <section class="m-5" id="tendencias">
       <h2 class="text-center mt-5 mb-4">Las tendencias de hoy</h2>
       <div class="row m-1" id="peliculasSection">
-        <!-- <div id="spinner"><p>Cargando...</p></div> -->
-        <!-- <div class="col-sm-6 col-md-3 col-lg-2 mb-sm-0 my-2">
-          <a class="card" href="pages/detalle.html">
-            <img src="/assets/img/posters/anatomia_de_una_caida.png" alt="anatomia_de_una_caida" class="card-img">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Anatomía de una caída</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/the-walking-dead-the-ones-who-li.png" alt="the-walking-dead-the-ones-who-li" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">The Walking Dead: The Ones Who Live</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/3-body-problem.png" alt="3-body-problem" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">3 Body problem</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/poor-things.png" alt="poor-things" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Poor Things</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/the_gentlemen.png" alt="the_gentlemen" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">The Gentlemen</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/zona_de_interes.png" alt="zona_de_interes" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Zona de Interés</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/shogun-2024.png" alt="shogun" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Shogun</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/rick-y-morty.png" alt="rick-y-morty" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Rick y Morty</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/fallout.png" alt="fallout" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Falllout</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/invincible.png" alt="invencible" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">Invencible</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/x-men-97.png" alt="x-men-97" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">X-men 97</h5>
-            </div>
-          </a>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-2 my-2">
-          <a class="card">
-            <img src="/assets/img/posters/el-encargado.png" alt="el-encargado" class="card-img  ">
-            <div class="card-img-overlay">
-              <h5 class="position-absolute top-50 start-50 translate-middle">El encargado</h5>
-            </div>
-          </a>
-        </div> -->
       </div>
-      <div class="d-flex justify-content-center">
-        <a href="#main_container"><input class="btn_buscador btn_submit mx-3" type="submit" value="Anterior" id="anterior" ></a>
-        <a href="#main_container"><input class="btn_buscador btn_submit mx-3" type="submit" value="Siguiente" id="siguiente"></a>
+      <div class="d-flex justify-content-center mt-3">
+        <a href="#main_container"><input class="btn_buscador btn_submit mx-3" type="submit"  value="Anterior" id="anterior" ></a>
+        <a href="#main_container"><input class="btn_buscador btn_submit mx-3" type="submit"  value="Siguiente" id="siguiente"></a>
       </div>
     </section>
     <hr style="color: var(--dorado);">
     <section class="aclamadas">
       <h2 class="text-center mt-5 mb-4">Las más aclamadas</h2>
-      <div class="glide ">
+      <div class="glider-contain multiple" id="carousel">
         <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <li class="glide__slide"><div><img src="/assets/img/posters/civil-war-2024-0.png" alt="civil war" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/late-night-with-the-devil.png" alt="late night with the devil" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/rebel-moon-parte-dos-la-guerrera.png" alt="rebel moon" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/duna-parte-dos.png" alt="dune dos" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/puan.png" alt="puan" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/the-man-from-earth.png" alt="el hombre de la tierra" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/article-370.png" alt="article 370" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/bigger.png" alt="bigger" class="card-img"></div></li>
-            <li class="glide__slide"><div><img src="/assets/img/posters/all-of-us-strangers.png" alt="desconocidos" class="card-img"></div></li>
-
+          <ul class="glide__slides" id="aclamadas_list">
           </ul>
-        </div>
-        <br><br>
-        <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa-solid fa-arrow-left" style="color: var(--dorado);"></i></button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa-solid fa-arrow-right" style="color: var(--dorado);"></i></button>
-        </div>
-        <div class="glide__bullets" data-glide-el="controls[nav]">
-          <button class="glide__bullet" data-glide-dir="=0"></button>
-          <button class="glide__bullet" data-glide-dir="=1"></button>
-          <button class="glide__bullet" data-glide-dir="=2"></button>
-          <button class="glide__bullet" data-glide-dir="=3"></button>
-          <button class="glide__bullet" data-glide-dir="=4"></button>
-          <button class="glide__bullet" data-glide-dir="=5"></button>
-          <button class="glide__bullet" data-glide-dir="=6"></button>
-          <button class="glide__bullet" data-glide-dir="=7"></button>
-          <button class="glide__bullet" data-glide-dir="=8"></button>
         </div>
       </div>
     </section>
   </main>
-  <footer>
+  <footer class="mt-5">
     <div class="d-sm-flex  justify-content-center text-center ">
       <div class="p-2"><a href="#" class="text-decoration-none warning">Términos Y Condiciones</a></div>
       <div class="p-2"><a href="#" class="text-decoration-none warning">Preguntas Frecuentes</a></div>
       <div class="p-2"><a href="#" class="text-decoration-none warning">Ayuda</a></div>
-      <div class="p-2"><a href="#" class="text-decoration-none warning">Administrador Películas</a></div>
+      <div class="p-2"><a href="pages/adminPeliculas.html" class="text-decoration-none warning">Administrador Películas</a></div>
     </div>
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-  <script>
-    const config = {
-      type: 'carousel',
-      perView: 6,
-      width: 10,
-      breakpoints: {
-        800: {
-          perView: 2
-        },
-        480: {
-          perView: 1
-        }
-      }
-    };
-    new Glide(".glide",config).mount();
-      </script>
+
 
   
   
@@ -243,11 +108,10 @@
             button.classList.remove('show-scroll-button');
         }
     });
-</script>
-  
+  </script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/api_movies.js"></script>
 
+  
 </body>
-
 </html>

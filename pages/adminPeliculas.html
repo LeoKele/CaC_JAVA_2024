@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/7a7df7520d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="shortcut icon" href="/assets/img/logo.png" type="image/x-icon">
+        <title>Administrador de Películas | BlockMovies</title>
+    </head>
+    <body class="forms">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/index.html"><img src="/assets/img/logo.svg" alt="logo de la página" class="logo me-2">BlockMovies</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarLogin" aria-controls="navBarLogin" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse w-100 justify-content-end" id="navBarLogin">
+                    <div class="navbar-nav ul_nav">
+                      <a class="nav-link me-2" href="/pages/iniciosesion.html">Iniciar Sesión</a>
+                      <a class="nav-link" href="/pages/registrarse.html">Registrarse</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+        <main>
+            <section class="mt-5">
+                <h2 class="text-center mb-3 titulo_form">Administrador de películas</h2>
+                <p class="text-center mb-4">A través de este portal podés gestionar todas las películas</p>
+                <form id="agregarPelicula" class="row g-3" novalidate>
+                    <div class="col-md-3">
+                      <label for="titulo">Titulo</label>
+                      <input type="text" class="form-control" id="titulo" required>
+                      <span id="mensajeTitulo" class="mensaje-error"></span>
+                    </div>
+                      <div class="col-md-3">
+                        <label for="fecha">Fecha de Lanzamiento</label>
+                        <input type="date"  class="form-control" id="fecha" min="1800-01-01" required>
+                        <span id="mensajeFecha" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="genero" class="form-label">Género</label>
+                        <input type="text" class="form-control" id="genero" required>
+                        <span id="mensajeGenero" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="duracion" class="form-label">Duración</label>
+                        <input type="text" class="form-control" id="duracion">
+                        <span id="mensajeDuracion" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="director" class="form-label">Director</label>
+                        <input type="text" class="form-control" id="director" required>
+                        <span id="mensajeDirector" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="reparto" class="form-label">Reparto</label>
+                        <input type="text" class="form-control" id="reparto">
+                        <span id="mensajeReparto" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="sinopsis" class="form-label">Sinopsis</label>
+                        <textarea name="" id="sinopsis" class="form-control"></textarea>
+                        <span id="mensajeSinopsis" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-6">
+                        <label for="portada" class="form-label">Portada</label>
+                        <input class="form-control" type="file" id="portada" accept=".jpg , .jpeg">
+                        <label for="portada" class="mt-1 text-secondary">Formatos soportados: .jpg, .jpeg</label><br>
+                        <span id="mensajePortada" class="mensaje-error"></span>
+                      </div>
+                      <div class="col-12 mt-3">
+                        <input type="reset" value="Limpiar campos"  class="btn_submit" id="reset">
+                        <button type="submit" class="btn btn_submit" id="btnAddMovie">Agregar Película</button>
+                      </div>
+                </form>
+            </section>
+            <hr style="color: var(--dorado);">
+            <section>
+              <h2 class="text-center mb-4 titulo_form">Listado de películas</h2>
+              <p class="text-center mb-4">Para ver todos los datos de las películas, elija una y toque modificar</p>
+              <div class="mt-3 d-flex justify-content-center">
+                <table class="tablas">
+                  <thead>
+                      <tr class="text-center">
+                        <th class="p-2">Portada</th>
+                          <th class="p-2">Título</th>
+                          <th class="p-2">Género</th>
+                          <th class="p-2">Acciones</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td class="p-2 text-center"><img src="/assets/img/posters/duna-parte-dos.png" alt="duna" class="img_tabla"></td>
+                          <td class="p-2">Dune 2</td>
+                          <td class="p-2">Acción</td>
+                          <td class="p-2 text-center">
+                            <button type="submit" class="btn btn_submit my-1">Modificar</button>
+                            <button type="submit" class="btn btn_submit my-1">Eliminar</button>
+                          </td>
+                      </tr>
+                      
+                  </tbody>
+              </table>
+              </div>
+              
+            </section>
+        </main>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/validar_admin.js"></script>
+    </body>
+</html>
