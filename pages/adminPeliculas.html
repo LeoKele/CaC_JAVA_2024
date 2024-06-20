@@ -32,27 +32,27 @@
                 <h2 class="text-center mb-3 titulo_form">Administrador de películas</h2>
                 <p class="text-center mb-4">A través de este portal podés gestionar todas las películas</p>
                 <form id="agregarPelicula" class="row g-3" novalidate>
-                    <div class="col-md-3">
-                      <label for="titulo">Titulo</label>
+                    <div class="col-md-5">
+                      <label for="titulo" class="form-label">Titulo</label>
                       <input type="text" class="form-control" id="titulo" required>
                       <span id="mensajeTitulo" class="mensaje-error"></span>
                     </div>
-                      <div class="col-md-3">
-                        <label for="fecha">Fecha de Lanzamiento</label>
+                      <!-- <div class="col-md-3">
+                        <label for="fecha" class="form-label">Fecha de Lanzamiento</label>
                         <input type="date"  class="form-control" id="fecha" min="1800-01-01" required>
                         <span id="mensajeFecha" class="mensaje-error"></span>
-                      </div>
-                      <div class="col-md-3">
+                      </div> -->
+                      <div class="col-md-5">
                         <label for="genero" class="form-label">Género</label>
                         <input type="text" class="form-control" id="genero" required>
                         <span id="mensajeGenero" class="mensaje-error"></span>
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-2">
                         <label for="duracion" class="form-label">Duración</label>
                         <input type="text" class="form-control" id="duracion">
                         <span id="mensajeDuracion" class="mensaje-error"></span>
                       </div>
-                      <div class="col-md-6">
+                      <!-- <div class="col-md-6">
                         <label for="director" class="form-label">Director</label>
                         <input type="text" class="form-control" id="director" required>
                         <span id="mensajeDirector" class="mensaje-error"></span>
@@ -66,7 +66,7 @@
                         <label for="sinopsis" class="form-label">Sinopsis</label>
                         <textarea name="" id="sinopsis" class="form-control"></textarea>
                         <span id="mensajeSinopsis" class="mensaje-error"></span>
-                      </div>
+                      </div> -->
                       <div class="col-6">
                         <label for="portada" class="form-label">Portada</label>
                         <input class="form-control" type="file" id="portada" accept=".jpg , .jpeg">
@@ -87,17 +87,21 @@
                 <table class="tablas">
                   <thead>
                       <tr class="text-center">
-                        <th class="p-2">Portada</th>
+                          <th class="p-2">Id</th>
+                          <th class="p-2">Portada</th>
                           <th class="p-2">Título</th>
                           <th class="p-2">Género</th>
+                          <th class="p-2">Duracion</th>
                           <th class="p-2">Acciones</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
-                        <td class="p-2 text-center"><img src="/assets/img/posters/duna-parte-dos.png" alt="duna" class="img_tabla"></td>
+                          <td class="p-2">1</td>
+                          <td class="p-2 text-center"><img src="/assets/img/posters/duna-parte-dos.png" alt="duna" class="img_tabla"></td>
                           <td class="p-2">Dune 2</td>
                           <td class="p-2">Acción</td>
+                          <td class="p-2">2h 47m</td>
                           <td class="p-2 text-center">
                             <button type="submit" class="btn btn_submit my-1">Modificar</button>
                             <button type="submit" class="btn btn_submit my-1">Eliminar</button>
