@@ -1,50 +1,27 @@
-document.getElementById("agregarPelicula").addEventListener("submit", function(event) {
+document.getElementById("agregarPelicula").addEventListener("submit", async (event) => {
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
     // Obtengo los valores de los campos
     const titulo = document.getElementById("titulo");
     const genero = document.getElementById("genero");
     const duracion = document.getElementById("duracion").value;
-    // const director = document.getElementById("director");
-    // const reparto = document.getElementById("reparto");
-    // const sinopsis = document.getElementById("sinopsis");
+    const portada = document.getElementById('portada');
 
-    // const fechaInput = document.getElementById("fecha");
-    // const fecha = new Date(fechaInput.value); //creamos objeto del tipo Date para comparar la fecha ingresada con la fecha actual
-    // const fechaActual = new Date();
 
     var errorTitulo = document.getElementById('mensajeTitulo');
-    // var errorFecha = document.getElementById('mensajeFecha');
     var errorGenero = document.getElementById('mensajeGenero');
     var errorDuracion = document.getElementById('mensajeDuracion');
-    // var errorDirector = document.getElementById('mensajeDirector');
-    // var errorReparto = document.getElementById('mensajeReparto');
-    // var errorSinopsis = document.getElementById('mensajeSinopsis');
     var errorPortada = document.getElementById('mensajePortada');
 
-    // Limpio mensajes de error previos
+    
+
     function limpiarMensajes(){
         errorTitulo.textContent = '';
-        // errorFecha.textContent = '';
         errorGenero.textContent = '';
         errorDuracion.textContent = '';
-        // errorDirector.textContent = '';
-        // errorReparto.textContent = '';
-        // errorSinopsis.textContent = '';
         errorPortada.textContent = '';
     }
     limpiarMensajes();
 
-    //validar titulo y sinopsis
-    // function validarAlfanumerico(texto){
-    //     var regex = /^[A-Za-z 0-9]+$/;
-    //     return regex.test(texto);
-    // }
-    
-    //validar Genero, Director, Reparto
-    // function validarTexto(texto){
-    //     var regex = /^[A-Za-z ]+$/;
-    //     return regex.test(texto);
-    // }
 
     function validarInput(input) {
         if (input){
@@ -54,11 +31,9 @@ document.getElementById("agregarPelicula").addEventListener("submit", function(e
       }
       
     const tituloValido = validarInput(titulo);
-    // const sinopsisValido = validarInput(sinopsis);
 
     const generoValido = validarInput(genero);
-    // const directorValido = validarInput(director);
-    // const repartoValido = validarInput(reparto);
+
 
 
     //validar duracion
@@ -84,14 +59,8 @@ document.getElementById("agregarPelicula").addEventListener("submit", function(e
     
     duracionValido = transformarTiempo(duracion);
 
-    // //valido date
-    // fechaActual.setHours(0,0,0,0); // Establezco la hora de la fecha actual a 00:00:00 para comparar solo la fecha
-    // const fechaValido = fecha < fechaActual ? true : false;
-
-
     //* Valido que el input portada sea .jpg o .jpeg y que no esté vacio
-    function archivoImgValido(){
-        var portada = document.getElementById('portada');
+    function archivoImgValido(portada){
         var archivo = portada.files[0];
         if (archivo && /\.(jpe?g)$/i.test(archivo.name)) {
             return true;
@@ -99,8 +68,8 @@ document.getElementById("agregarPelicula").addEventListener("submit", function(e
         else return false;
     }
 
-    const portadaValido = archivoImgValido();
-    // console.log(portadaValido);
+    const portadaValido = archivoImgValido(portada);
+
     
 
 
@@ -114,21 +83,58 @@ document.getElementById("agregarPelicula").addEventListener("submit", function(e
     });
 
 
-    // Verifica si ambos campos son válidos
+
     if (tituloValido && generoValido && duracionValido && portadaValido) {
-        console.log("Formulario válido");
+        // console.log("Formulario válido"); 
+        // console.log(titulo.value,genero.value,duracion,portada.value);
+        //! Empieza el metodo POST una vez que se valida el form
+        //Obtenemos el nombre de la img subida
+        const partes = portada.value.split('\\'); //divide la ruta por las barras invertidas
+        const portadaNombre = partes[partes.length-1]; //el ult elemento es nuestro archivo
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                titulo: titulo.value,
+                genero: genero.value,
+                duracion: duracion,
+                imagen: portadaNombre
+
+            })
+        };
+        //realizo la peticion fetch a la api para agregar una pelicula
+        const response = await fetch('http://localhost:8080/apisimple/peliculas', options);
+        //obtengo la respuesta
+        const data = await response.json();
+        //si la respuesta es correcta, muestro un mensaje de exito y limpio los inputs del formulario
+        // si el codigo es 201, la pelicula se agrego correctamente
+        if (response.status === 201) {
+            swal({
+                title: "Pelicula agregada correctamente",
+                icon: "success",
+              }).then((value)=>{
+                if (value){
+                    // que se recargue la pagina para ver la pelicula agregada
+                    location.reload();
+                }
+              });
+
+
+        } else {
+            swal({
+                title: "Error al agregar la pelicula.",
+                text: "Por Favor, intente de nuevo más tarde",
+                icon: "error",
+              });
+        }
+
 
     } else {
-        console.log("Formulario inválido");
-
-        // Muestro los mensajes de error debajo de los campos
         document.getElementById("mensajeTitulo").textContent = tituloValido ? "" : "Por favor, completa este campo.";
-        // document.getElementById("mensajeFecha").textContent = fechaValido ? "" : "Elija una fecha valida"
         document.getElementById("mensajeGenero").textContent = generoValido ? "" : "Por favor, completa este campo.";
         document.getElementById("mensajeDuracion").textContent = duracionValido ? "" : "Formato de tiempo no válido. Debe ser '90m' o '1h 30m'.";
-        // document.getElementById("mensajeDirector").textContent = directorValido ? "" : "Por favor, completa este campo.";
-        // document.getElementById("mensajeReparto").textContent = repartoValido ? "" : "Por favor, completa este campo.";
-        // document.getElementById("mensajeSinopsis").textContent = sinopsisValido ? "" : "Por favor, completa este campo.";
         document.getElementById("mensajePortada").textContent = portadaValido ? "" : "Por favor, ingrese una imagen";
     }
     
