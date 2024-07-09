@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             'Content-Type': 'application/json'
         }
     };
-    const response = await fetch('http://localhost:8080/apisimple/peliculas', options);
+    const response = await fetch('http://localhost:8080/app/peliculas', options);
     const data = await response.json();
     console.log(data);
     //{idPelicula: 2, titulo: 'Transformers 2', genero: 'Accion', duracion: '3h 2m', imagen: 'transformers.jpg'}
