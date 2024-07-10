@@ -82,8 +82,6 @@ document.getElementById("agregarPelicula").addEventListener("submit", async (eve
         })
     });
 
-
-
     if (tituloValido && generoValido && duracionValido && portadaValido) {
         // console.log("Formulario válido"); 
         // console.log(titulo.value,genero.value,duracion,portada.value);

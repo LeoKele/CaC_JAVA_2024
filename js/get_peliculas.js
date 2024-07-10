@@ -1,7 +1,7 @@
-//cuando el dom se cargue 
+//* REGION END_PELICULAS
+
 document.addEventListener('DOMContentLoaded', async () => {
     // realizamos una peticion fetch a esta api para obtener todas las peliculas de la base:
-    // configuracion de options, es un get y no necesita body
     const options = {
         method: 'GET',
         headers: {
@@ -10,20 +10,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     const response = await fetch('http://localhost:8080/app/peliculas', options);
     const data = await response.json();
-    console.log(data);
-    //{idPelicula: 2, titulo: 'Transformers 2', genero: 'Accion', duracion: '3h 2m', imagen: 'transformers.jpg'}
+    // console.log(data);
     // Extraemos las películas de la respuesta
     const movies = data;
-    // tenemos que insertar todas las peliculas en la tabla con id tablePeliculas, pero en tbody con la siguiente estructura de ejemplo:
-    /*<!--este es solo un ejemplo porque se va a llenar desde js-->
-                    <tr>
-                        <td>The Super Mario Bros. Movie (2023)</td>
-                        <td>3h 22m</td>
-                        <td>Animation, Family, Adventure, Fantasy, Comedy</td>
-                        <td><img width="150px" src="../assets/img/mario.jpg" alt="mario pelicula 2023"></td>
-                        
-                    </tr> 
-    */
   
     //obtenemos el tbody de la tabla
     const tbody = document.getElementById('bodyTablePeliculas');
@@ -70,12 +59,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         tdAccion.classList.add('p-2');
         const btnModificar = document.createElement('button');
         btnModificar.type = 'submit';
-        btnModificar.classList.add('btn','btn_submit','my-1','mx-1');
+        btnModificar.classList.add('btn','btn_submit','my-1','mx-1','btnModificar');
         btnModificar.innerHTML = 'Modificar';
 
         const btnEliminar = document.createElement('button');
         btnEliminar.type = 'submit';
-        btnEliminar.classList.add('btn','btn_submit','my-1','mx-1');
+        btnEliminar.classList.add('btn','btn_submit','my-1','mx-1','btnEliminar');
         btnEliminar.innerHTML = 'Eliminar';
 
         tdAccion.appendChild(btnModificar);
@@ -93,4 +82,68 @@ document.addEventListener('DOMContentLoaded', async () => {
         tbody.appendChild(tr);
 
     });
+    // END REGION GET_PELICULAS TERMINA LOGICA DEL GET ., TERMINA LOGICA DE LLENAR LA TABLA DE PELICULAS
+
+    //* Evento para modificar
+    // document.querySelectorAll('.btnModificar').forEach(button =>{
+    //     button.addEventListener('click', async(event)=>{
+    //         const row = event.target.closest('tr');
+            
+    //         // console.log(row);
+    //         const peliculaId = row.querySelector('td:first-child').innerText.trim();
+    //         // console.log(peliculaId);
+            
+    //         try{
+    //             const response = await fetch(`http://localhost:8080/app/peliculas?id=${peliculaId}`);
+    //             if (!response.ok){
+    //                 // lanzo una excepcion en caso de que no funcione el fetch, esto se ve en la consola
+    //                 throw new Error('Error al obtener los datos de la película');
+    //             }
+    //             const data = await response.json();
+    //             const movieUnica = data[0];
+    //             console.log(movieUnica);
+    //             // son los id del formulario, como son unicos e irrepetibles dentro del html, sabe a quien insertarles los valores
+    //             // document.getElementById('id').value = movieUnica.idPelicula;
+    //             document.getElementById('titulo').value = movieUnica.titulo;
+    //             document.getElementById('genero').value = movieUnica.genero;
+    //             document.getElementById('duracion').value = movieUnica.duracion;
+
+                
+    //         }
+    //         catch(error){
+    //             console.log('Error: ', error);
+    //         }
+    //     });
+
+    // });
+    //* Evento para eliminar
+    // document.querySelectorAll('.btnEliminar').forEach(button =>{
+    //     button.addEventListener('click',async (event)=>{
+    //         const row = event.target.closest('tr');
+    //         const peliculaId = row.querySelector('td:first-child').innerText.trim();
+    //         try {
+    //             const response = await fetch(`http://localhost:8080/app/peliculas?id=${peliculaId}`, {
+    //                 method: 'DELETE',
+    //                 headers: {
+    //                     'Content-Type': 'application/json'
+    //                 }
+    //             });
+    //             if (!response.ok) {
+    //                 alert('Error al eliminar la película');
+    //                 throw new Error('Error al eliminar la película');
+    //             }
+    //             const data = await response.json();
+    //             // si da ok muestro alerta que se elimino correctamente
+               
+    //             alert('Pelicula eliminada correctamente');
+    //             console.log(data);
+    //             location.reload();// recargo la pagina 
+               
+              
+               
+    //         } catch (error) {
+    //             console.error('Error:', error);
+    //         }
+    //     });
+    // });
 });
